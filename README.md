@@ -3,6 +3,7 @@
 ## Présentation
 
 FastBroc est une plateforme de marketplace open source développée avec Next.js et React. Cette application offre une interface utilisateur moderne et épurée, conçue pour être facilement personnalisable selon vos besoins.
+![image](https://github.com/user-attachments/assets/0969c686-7ff0-4229-8f08-5ccc910e0fd7)
 
 ## Fonctionnalités
 
