@@ -1,0 +1,47 @@
+version: '3.8'
+
+services:
+  # Service principal pour l'application FastBroc
+  fastbroc:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        - NODE_ENV=production
+    container_name: fastbroc-app
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+    # Configuration pour le développement
+    # Pour le développement, décommentez ces lignes et commentez le build ci-dessus
+    # volumes:
+    #   - ./:/app
+    #   - /app/node_modules
+    #   - /app/.next
+
+  # Mode développement avec hot-reload (décommentez pour le développement)
+  # fastbroc-dev:
+  #   build:
+  #     context: .
+  #     dockerfile: Dockerfile
+  #     target: deps
+  #   command: npm run dev
+  #   container_name: fastbroc-dev
+  #   restart: unless-stopped
+  #   ports:
+  #     - "3000:3000"
+  #   environment:
+  #     - NODE_ENV=development
+  #   volumes:
+  #     - ./:/app
+  #     - /app/node_modules
+  #     - /app/.next
+
+  # Vous pouvez ajouter d'autres services ici si nécessaire
+  # Par exemple, une base de données, un service de cache, etc.
+
+# Définition des volumes pour la persistance des données
+volumes:
+  node_modules:
